@@ -35,6 +35,43 @@
   - `git_checkout`：切换 / 创建并切换分支
   - `git_log`：查看图形化提交历史
 
+## 🔐 Required Permissions / 权限说明
+
+本插件使用 GitHub Personal Access Token 完成以下操作：
+
+- 测试 GitHub 连接（`GET /user`）
+- 列出当前账号已有的远程仓库（`GET /user/repos`）
+- 创建 GitHub 仓库（`POST /user/repos`）
+- 通过 HTTPS 推送代码到远程仓库
+
+如果你只使用本地 Git 功能（`init` / `commit` / `branch` / `checkout` / `log` / `status`），**不需要 Token**。
+
+### Classic PAT 推荐权限
+
+| 场景 | 所需 Scope |
+|---|---|
+| 仅操作公开仓库 / 创建公开仓库 | `public_repo` |
+| 操作私有仓库 / 创建私有仓库 | `repo` |
+| 推荐直接使用 | `repo`（包含公开与私有仓库的完整读写） |
+
+### Fine-grained PAT 推荐权限
+
+| 设置项 | 推荐值 |
+|---|---|
+| Repository access | All repositories，或至少选择需要操作的仓库 |
+| Contents | **Read and write** |
+| Administration | **Read and write**（仅当需要通过 API 创建/删除仓库时必需） |
+| Metadata | Read（GitHub 自动包含） |
+
+> 如果只用现有仓库进行提交和推送，`Administration` 可以不开；如果需要“创建 GitHub 仓库并推送”，则必须开启 `Administration: Read and write`。
+
+### 安全说明
+
+- Token 仅保存在本机 `~/.dsh/git/config.json`
+- 配置文件权限为 `0600`
+- Token 不会写入 Git remote URL
+- 请勿将 Token 提交到任何公开仓库
+
 ## 🚀 Install / 安装
 
 ### 方式 A：本地源码 / 手动安装
