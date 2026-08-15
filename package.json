@@ -1,0 +1,47 @@
+{
+  "name": "@deepseek-ai/dsh-plugin-git",
+  "version": "0.1.0",
+  "description": "GitHub/Git deployment plugin for DeepSeek Harness (DSH): a Git settings section after model/plugin/agent preset, global GitHub account config, visual repository management (init/create/commit/push/status/log), branch create/switch, commit graph, and 9 git_* model tools for agents.",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "verify": "node scripts/verify.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "git",
+    "github",
+    "plugin",
+    "settings"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings-general"
+      ]
+    }
+  },
+  "license": "MIT"
+}
