@@ -98,7 +98,7 @@ EOF
 dsh plugin --profile web add /path/to/dsh-plugin-repoflow
 
 # 若发布为 GitHub 仓库
-npx -p @deepseek-ai/dsh dsh plugin --profile web add <owner>/dsh-plugin-repoflow
+npx -p @deepseek-ai/dsh dsh plugin --profile web add GHJIVHIDD/dsh-plugin-repoflow
 ```
 
 ## 🧩 Architecture / 架构
