@@ -1,4 +1,4 @@
-# dsh-plugin-git
+# dsh-plugin-repoflow
 
 > Deployment-level Git plugin for [DeepSeek Harness](https://github.com/deepseek-ai/DeepSeek-Harness) (DSH) — a **Git** settings section after 通用设置 / 模型 / 插件 / agent 预设, with global GitHub account configuration and visual local repository management.
 
@@ -78,14 +78,14 @@
 
 ```sh
 # 1. 将插件复制到 profile 的插件目录
-cp -R dsh-plugin-git ~/.dsh/profiles/web/node_modules/@deepseek-ai/
+cp -R dsh-plugin-repoflow ~/.dsh/profiles/web/node_modules/@dsh-community/
 
 # 2. 在 profile 的用户补丁层注册插件行
 cat >> ~/.dsh/profiles/web/cordis.patch.yml << 'EOF'
 
 - insert:
-    - id: ui-git
-      name: '@deepseek-ai/dsh-plugin-git'
+    - id: ui-repoflow
+      name: '@dsh-community/dsh-plugin-repoflow'
 EOF
 
 # 3. 重启 profile（或等待 HMR 事务性重读用户补丁）
@@ -95,10 +95,10 @@ EOF
 
 ```sh
 # 本地目录安装（开发调试推荐）
-dsh plugin --profile web add /path/to/dsh-plugin-git
+dsh plugin --profile web add /path/to/dsh-plugin-repoflow
 
 # 若发布为 GitHub 仓库
-npx -p @deepseek-ai/dsh dsh plugin --profile web add <owner>/dsh-plugin-git
+npx -p @deepseek-ai/dsh dsh plugin --profile web add <owner>/dsh-plugin-repoflow
 ```
 
 ## 🧩 Architecture / 架构
@@ -126,9 +126,9 @@ node scripts/verify.mjs
 ## 📦 Package structure / 包结构
 
 ```
-dsh-plugin-git/
+dsh-plugin-repoflow/
 ├── package.json          # dsh.bundle + dsh.client 声明、exports["./client"]
-├── cordis.patch.yml      # bundle 补丁：插入 ui-git 设置页
+├── cordis.patch.yml      # bundle 补丁：插入 ui-repoflow 设置页
 ├── lib/
 │   ├── index.js          # host 半区（webServer /git-api/*）
 │   ├── client.js         # client 半区（settings.section Git 页）

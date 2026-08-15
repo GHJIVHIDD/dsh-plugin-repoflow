@@ -1,5 +1,5 @@
 /**
- * Type declarations for @deepseek-ai/dsh-plugin-git host half.
+ * Type declarations for @dsh-community/dsh-plugin-repoflow host half.
  */
 
 export interface GitAccountConfig {

@@ -1,5 +1,5 @@
 # Git (deployment plugin): inserts the "Git" settings section after model/plugin/agent preset.
 # The host half serves /git-api/* routes and the client registers settings.section.
 - insert:
-    - id: ui-git
-      name: '@deepseek-ai/dsh-plugin-git'
+    - id: ui-repoflow
+      name: '@dsh-community/dsh-plugin-repoflow'

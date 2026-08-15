@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-plugin-git",
+  "name": "@dsh-community/dsh-plugin-repoflow",
   "version": "0.1.0",
   "description": "GitHub/Git deployment plugin for DeepSeek Harness (DSH): a Git settings section after model/plugin/agent preset, global GitHub account config, visual repository management (init/create/commit/push/status/log), branch create/switch, commit graph, and 9 git_* model tools for agents.",
   "type": "module",
