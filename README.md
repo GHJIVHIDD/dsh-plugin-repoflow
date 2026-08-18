@@ -137,10 +137,6 @@ dsh-plugin-repoflow/
 └── README.md / LICENSE
 ```
 
-## 📄 License
-
-[MIT](./LICENSE)
-
 ### License
 
 This project is licensed under the Apache License 2.0.
